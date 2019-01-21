@@ -49,7 +49,7 @@ app.put('/update/:id', function(req, res) {
           });
 
 */
-          res.status(200).send(`working : ${id} , ${productcode}, ${product_name}, ${product_description}, ${product_category}`);
+          res.status(200).send(`working : ${id}`);
         }
         else {
           if (err.message.indexOf('invalid_grant') >= 0) {
