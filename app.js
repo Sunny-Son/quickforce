@@ -32,6 +32,7 @@ app.get('/update', function(req, res) {
     });
 
     const product_name="SUNNY";
+    const product_id="01t0o0000090m7SAAQ";
 
     if (req.query.code !== undefined) {
       // authenticated
@@ -39,7 +40,8 @@ app.get('/update', function(req, res) {
         if (!err) {
 //          org.query({ query: 'SELECT id, name, type, industry, rating FROM Account' }, function(err, results) {
 //          org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
-            org.query({ query: 'UPDATE product2 SET NAME = \'SUNNY\' WHERE id=\'01t0o0000090m7SAAQ\' },function(err, results) {
+          org.query({ query: 'UPDATE product2 SET NAME = \'SUNNY\' WHERE id=\'01t0o0000090m7SAAQ\' ' },function(err, results) {
+//          org.query({ query: 'UPDATE product2 SET NAME = ${product_name} WHERE id=${product_id}' },function(err, results) {
             if (!err) {
               res.render('index', {records: results.records});
             }
