@@ -36,20 +36,16 @@ app.put('/update/:id', function(req, res) {
       org.authenticate(req.query, function(err) {
         if (!err) {
          const id = parseInt(req.params.id);
-//         const { productcode, product_name, product_description, product_category } = req.body;
 
-/*
-          org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
+         org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
             if (!err) {
               res.render('index', {records: results.records});
             }
             else {
-              res.status(200).send(`working : ${id}`);
+              res.send(err.message);
             }
           });
 
-*/
-          res.status(200).send(`working : ${id}`);
         }
         else {
           if (err.message.indexOf('invalid_grant') >= 0) {
