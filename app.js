@@ -33,8 +33,8 @@ app.put('/update/:id', function(req, res) {
       // authenticated
       org.authenticate(req.query, function(err) {
         if (!err) {
-         var id = parseInt(req.params.id)
-         var { productcode, product_name, product_description, product_category } = req.body
+         var id = parseInt(req.params.id);
+         var { productcode, product_name, product_description, product_category } = req.body;
 
 /*
           org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
