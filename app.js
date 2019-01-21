@@ -31,12 +31,15 @@ app.get('/update', function(req, res) {
       mode: 'single'
     });
 
+    const product_name="SUNNY";
+
     if (req.query.code !== undefined) {
       // authenticated
       org.authenticate(req.query, function(err) {
         if (!err) {
 //          org.query({ query: 'SELECT id, name, type, industry, rating FROM Account' }, function(err, results) {
-          org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
+//          org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
+            org.query({ query: 'UPDATE product2 SET NAME = \'SUNNY\' WHERE id=\'01t0o0000090m7SAAQ\' },function(err, results) {
             if (!err) {
               res.render('index', {records: results.records});
             }
