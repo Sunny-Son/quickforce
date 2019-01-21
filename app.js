@@ -43,7 +43,8 @@ app.get('/update', function(req, res) {
           org.query({ query: 'UPDATE product2 SET NAME = \'SUNNY\' WHERE id=\'01t0o0000090m7SAAQ\' ' },function(err, results) {
 //          org.query({ query: 'UPDATE product2 SET NAME = ${product_name} WHERE id=${product_id}' },function(err, results) {
             if (!err) {
-              res.render('index', {records: results.records});
+//              res.render('index', {records: results.records});
+              res.send('updated');
             }
             else {
               res.send(err.message);
