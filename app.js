@@ -29,13 +29,13 @@ app.put('/update/:id', function(req, res) {
       mode: 'single'
     });
 
-    const id = parseInt(req.params.id)
-    const { productcode, product_name, product_description, product_category } = req.body
-
     if (req.query.code !== undefined) {
       // authenticated
       org.authenticate(req.query, function(err) {
         if (!err) {
+         var id = parseInt(req.params.id)
+         var { productcode, product_name, product_description, product_category } = req.body
+
 /*
           org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
             if (!err) {
