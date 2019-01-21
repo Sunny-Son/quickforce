@@ -109,7 +109,7 @@ app.get('/update', function(req, res) {
         }
         else {
           if (err.message.indexOf('invalid_grant') >= 0) {
-            res.redirect('/');
+            res.redirect('/update');
           }
           else {
             res.send(err.message);
