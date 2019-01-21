@@ -36,7 +36,7 @@ app.put('/update/:id', function(req, res) {
       org.authenticate(req.query, function(err) {
         if (!err) {
          const id = parseInt(req.params.id);
-
+/*
          org.query({ query: 'SELECT id, name, productcode, description, family FROM product2' }, function(err, results) {
             if (!err) {
               res.render('index', {records: results.records});
@@ -45,7 +45,7 @@ app.put('/update/:id', function(req, res) {
               res.send(err.message);
             }
           });
-
+*/
         }
         else {
           if (err.message.indexOf('invalid_grant') >= 0) {
