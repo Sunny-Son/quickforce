@@ -22,7 +22,7 @@ hbs.registerHelper('get', function(field) {
   return this.get(field);
 });
 
-app.put('/update/:id', function(req, res) {
+app.get('/update', function(req, res) {
   if (isSetup()) {
     var org = nforce.createConnection({
       clientId: process.env.CONSUMER_KEY,
